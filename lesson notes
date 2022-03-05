@@ -1,0 +1,34 @@
+# Lesson -1
+
+# Lesson 0
+
+
+
+# Lesson 1
+
+### Runes and thier properties
+
+  - ' **%-** ' **cenhep**, for applying a function (add, div, pow, etc)
+  - ' **^-** ' **cethep**, for enforcing or converting the data type (aura)
+  - ' **:^** ' **colhep**, for making a cell (pair of nouns)
+  - ' **=/** ' **tisfas**, Assigns a name to a value (kinda like var)
+  - ' **?:** ' **wutcol**, Make a boolean style decision
+
+
+        Types of values/auras (there are more than just these - 32 total)
+
+        @ud - unsigned decimal - 1.000.056
+        @ux - unsigned hexdecimal - 0x5f5.e138
+        @ub - unsigned binary - 0b11.1000
+        @t - Strait text (string) - 'bebop & rocksteady'
+        @da - Absolute Date - ~2018.5.14
+        @rs - Single precision (32 bits) - .6.022141e23
+        @p - Phonemic base (ship name) - ~litneb-maltyp
+
+
+
+
+
+### General notes
+
+Unsigned mean 'no particular + or - value'
