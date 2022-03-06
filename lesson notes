@@ -1,5 +1,5 @@
 # Lesson -1
- 
+
 # Lesson 0
 
 
@@ -13,6 +13,20 @@
   - ' **:^** ' **colhep**, for making a cell (pair of nouns)
   - ' **=/** ' **tisfas**, Assigns a name to a value (kinda like var)
   - ' **?:** ' **wutcol**, Make a boolean style decision
+
+
+
+**%- cenhep**
+
+        Various functions/operations (gate) that can be called using %-
+
+        'add'
+        'sub'
+        'div'
+        'pow'
+
+**^- kethep**
+
 
 
         Types of values/auras (there are more than just these - 32 total)
@@ -31,4 +45,8 @@
 
 ### General notes
 
-Unsigned mean 'no particular + or - value'
+- The most general data category in hoon is a 'noun' (like a thing) and its either an atom or a cell
+- An atom is  any non zero integer
+- a Cell is a pair of values
+- Unsigned means 'no particular + or - value'
+- 1000 seperator is the German convention '.' not ',' one thousand is 1.000
