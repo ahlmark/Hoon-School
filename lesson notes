@@ -1,10 +1,10 @@
-# Lesson -1
+# Lesson -1: Intro to Computing
 
-# Lesson 0
+# Lesson 0: Setting Up Urbit
 
 
 
-# Lesson 1
+# Lesson 1: Hoon Syntax (@ 54:00 thru)
 
 ### Runes and thier properties
 
@@ -22,14 +22,16 @@
 
         'add'
         'sub'
+        'mul'
         'div'
         'pow'
+        'gth' - greater than
 
 **^- kethep**
 
 
 
-        Types of values/auras (there are more than just these - 32 total)
+        Types of values/auras (there are more than just these - maybe 32?)
 
         @ud - unsigned decimal - 1.000.056
         @ux - unsigned hexdecimal - 0x5f5.e138
@@ -47,6 +49,11 @@
 
 - The most general data category in hoon is a 'noun' (like a thing) and its either an atom or a cell
 - An atom is  any non zero integer
-- a Cell is a pair of values
+- a Cell is a pair of any two nouns (values)
 - Unsigned means 'no particular + or - value'
 - 1000 seperator is the German convention '.' not ',' one thousand is 1.000
+- Apply operation with tick marks and aura - "''@ub'" this is an operation that does the work of passing the value through the empty aura first before applying the conversion command
+- Empty aura "@" defaults to raw/naked value. use that new value to convert into something new
+- "ace" seperates certain values, "gap" seperates the children of a rune
+- Short cut for building a cell with %- ....[2 3] ----> [%-(add [1 1]) 3] (this is short form ace instead of gap)
+- %.n is false - %.y is true

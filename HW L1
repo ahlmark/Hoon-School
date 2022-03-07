@@ -9,9 +9,13 @@ Hoon Homework Lesson 1
 3. Find planet number:
 
     dojo>
-    %-  @ud  ~litneb-maltyp
+    `@ud`~litneb-maltyp
+    85.132.544
 
 4. Find planet Hexdecimal:
+
+    `@ux`~litneb-maltyp
+    0x513.0500
 
 5. mix and match auras: Done
 
@@ -23,7 +27,14 @@ Hoon Homework Lesson 1
 
 9. 'In one expression, pin a value `three` and calculate 3×3 using the ++mul function (gate)'
 
+    =/  three  3
+    %-(mul [three three])
+
 10. 'In one expression, pin two values `ten` and `hundred` and calculate 10¹⁰⁰ using the ++pow function (gate).'
+
+    =/  ten  10
+    =/  hundred  100
+    %-(pow [ten hundred])
 
 11. 'Implement the piecewise boxcar function. Since we cant store expressions for future use yet, use 4 for the example input value (but pin it to a face `x`).'
 
