@@ -8,7 +8,6 @@ Hoon Homework Lesson 1
 
 3. Find planet number:
 
-    dojo>
     `@ud`~litneb-maltyp
     85.132.544
 
@@ -21,9 +20,19 @@ Hoon Homework Lesson 1
 
 6. Create a duple, or 2-tuple, of 1 and 2, using a single col rune.
 
+    :-  1  2
+
 7. 'Create a triple, or 3-tuple, of ('a', 'b', and 'c',) using a single col rune.'
 
+    :-
+      `@`'a'
+      [`@`'b' `@`'c']
+
 8. 'Create a quadruple, or 4-tuple, of ~zod, ~nec, ~bud, and ~wes, using a single col rune.'
+
+    :-
+      [`@`~zod `@`~nec]
+      [`@`~bud `@`~wes]
 
 9. 'In one expression, pin a value `three` and calculate 3×3 using the ++mul function (gate)'
 
@@ -38,7 +47,23 @@ Hoon Homework Lesson 1
 
 11. 'Implement the piecewise boxcar function. Since we cant store expressions for future use yet, use 4 for the example input value (but pin it to a face `x`).'
 
+    =/  x  4
+     ?:  %-(gth [x 3])
+      ?:  %-(lte [x 5])
+       1
+       0
+     0
+
 12. 'Implement the piecewise triangle function. Since we cant store expressions for future use yet, use 2 for the example input value (but pin it to a face `x`).'
+
+    =/  x  2
+     ?:  %-(gth [x 2])
+      ?:  %-(lte [x 3])
+        %-(sub [x 2])
+        ?:  %-(lte [x 4])
+         %-(sub [4 x])
+         0
+      0
 
 13. 'Pronounce %=' : centis
 

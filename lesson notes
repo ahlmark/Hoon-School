@@ -10,7 +10,7 @@
 
   - ' **%-** ' **cenhep**, for applying a function (add, div, pow, etc)
   - ' **^-** ' **cethep**, for enforcing or converting the data type (aura)
-  - ' **:^** ' **colhep**, for making a cell (pair of nouns)
+  - ' **:-** ' **colhep**, for making a cell (pair of nouns)
   - ' **=/** ' **tisfas**, Assigns a name to a value (kinda like var)
   - ' **?:** ' **wutcol**, Make a boolean style decision
 
@@ -52,8 +52,9 @@
 - a Cell is a pair of any two nouns (values)
 - Unsigned means 'no particular + or - value'
 - 1000 seperator is the German convention '.' not ',' one thousand is 1.000
-- Apply operation with tick marks and aura - "''@ub'" this is an operation that does the work of passing the value through the empty aura first before applying the conversion command
+- Apply operation with tick marks and aura - '@ub' this is an operation that does the work of passing the value through the empty aura first before applying the conversion command
 - Empty aura "@" defaults to raw/naked value. use that new value to convert into something new
 - "ace" seperates certain values, "gap" seperates the children of a rune
 - Short cut for building a cell with %- ....[2 3] ----> [%-(add [1 1]) 3] (this is short form ace instead of gap)
 - %.n is false - %.y is true
+- The notation of square brakets `[1 2]` is shorthand for  `:-  1  2`
