@@ -2,50 +2,47 @@
 
 Hoon Homework Lesson 1
 
-1. Email: ****
 
-2. Planet: ~litneb-maltyp
-
-3. Find planet number:
+1. Find planet number:
 
     `@ud`~litneb-maltyp
     85.132.544
 
-4. Find planet Hexdecimal:
+2. Find planet Hexdecimal:
 
     `@ux`~litneb-maltyp
     0x513.0500
 
-5. mix and match auras: Done
+3. mix and match auras: Done
 
-6. Create a duple, or 2-tuple, of 1 and 2, using a single col rune.
+4. Create a duple, or 2-tuple, of 1 and 2, using a single col rune.
 
     :-  1  2
 
-7. 'Create a triple, or 3-tuple, of ('a', 'b', and 'c',) using a single col rune.'
+5. 'Create a triple, or 3-tuple, of ('a', 'b', and 'c',) using a single col rune.'
 
     :-
       `@`'a'
       [`@`'b' `@`'c']
 
-8. 'Create a quadruple, or 4-tuple, of ~zod, ~nec, ~bud, and ~wes, using a single col rune.'
+6. 'Create a quadruple, or 4-tuple, of ~zod, ~nec, ~bud, and ~wes, using a single col rune.'
 
     :-
       [`@`~zod `@`~nec]
       [`@`~bud `@`~wes]
 
-9. 'In one expression, pin a value `three` and calculate 3×3 using the ++mul function (gate)'
+7. 'In one expression, pin a value `three` and calculate 3×3 using the ++mul function (gate)'
 
     =/  three  3
-    %-(mul [three three])
+      %-(mul [three three])
 
-10. 'In one expression, pin two values `ten` and `hundred` and calculate 10¹⁰⁰ using the ++pow function (gate).'
+8. 'In one expression, pin two values `ten` and `hundred` and calculate 10¹⁰⁰ using the ++pow function (gate).'
 
     =/  ten  10
     =/  hundred  100
-    %-(pow [ten hundred])
+      %-(pow [ten hundred])
 
-11. 'Implement the piecewise boxcar function. Since we cant store expressions for future use yet, use 4 for the example input value (but pin it to a face `x`).'
+9. 'Implement the piecewise boxcar function. Since we cant store expressions for future use yet, use 4 for the example input value (but pin it to a face `x`).'
 
     =/  x  4
      ?:  %-(gth [x 3])
@@ -54,7 +51,7 @@ Hoon Homework Lesson 1
        0
      0
 
-12. 'Implement the piecewise triangle function. Since we cant store expressions for future use yet, use 2 for the example input value (but pin it to a face `x`).'
+10. 'Implement the piecewise triangle function. Since we cant store expressions for future use yet, use 2 for the example input value (but pin it to a face `x`).'
 
     =/  x  2
      ?:  %-(gth [x 2])
@@ -65,12 +62,12 @@ Hoon Homework Lesson 1
          0
       0
 
-13. 'Pronounce %=' : centis
+11. 'Pronounce %=' : centis
 
-14. 'Pronounce $:' :' buccol
+12. 'Pronounce $:' :' buccol
 
-15. 'Pronounce :*' :' coltar
+13. 'Pronounce :*' :' coltar
 
-16. 'Pronounce '~&' :' sigpam
+14. 'Pronounce '~&' :' sigpam
 
-17. Pronounce '|-' : barhep
+15. Pronounce '|-' : barhep

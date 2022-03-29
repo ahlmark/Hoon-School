@@ -1,0 +1,141 @@
+
+
+
+Hoon Homework Lesson 2
+
+1. Convert the irregular form `[1 2 3 4]` to a regular form.
+
+:-
+ 1  :-
+  2  :-
+   3  4
+
+2. Convert the irregular form `(factorial 10)` to a regular form.
+
+::not sure is im supposed to extrapolate the logic or call a bunch of mul gates
+%-  fac  10
+
+3. Convert the regular form `^- @ud ^- @ 'two wolves'` to an irregular form.
+
+`@ud`'two wolves'
+
+4. What is the bunt of `@da`?
+
+'~2000.1.1*'
+
+5. What is the bunt of `@uc`
+
+'0c1111111111111111111114oLvT2'
+
+6. What is the bunt of `@da` as a `@ud`
+
+'0'
+
+7. What is the bunt of `cell`? (I.e. there is a type in Hoon named `cell`, do it of that.)
+
+:: I'm not sure if i understood this correctly. I bunted a random mix of type in a cell
+[0 ~zod]
+
+8. Produce a type union which can accept a signed or unsigned decimal integer.
+
+$?(@ud @sd)
+
+9. Produce a named tuple with three elements `x`, `y`, ad `z`, all of type `@rs` (real number, number with a fractional part).
+
+$:(x=@rs y=@rs z=@rs)
+
+10. What does the infixed `^` ket do? E.g., `4^5`. (Infer from its behavior in the Dojo.)
+
+'applies inputs to the children of a cell'
+
+11. Take your code for the boxcar function in the previous homework. Produce a gate which works for any `@ud` input value `x`.
+
+|= x=@ud
+^-  @ud
+ ?:  %-(gth [x 3])
+  ?:  %-(lte [x 5])
+   1
+   0
+ 0
+
+12. Take your code for the boxcar function gate in the previous question.
+Produce a generator from the gate named `boxcar.hoon`.
+Dont forget to add at least one comment to explain its intent.
+
+:: boxcar.hoon
+:: triggers a 1 response for the number 4, and 0 to all others.
+
+|=  x=@ud ::triggers a positive response for the number 4
+^-  @ud :: enforces @ud as the response type
+ ?:  %-(gth [x 3])
+  ?:  %-(lte [x 5]) :: is greater than 3
+   1 :: is greater than 3 and less than 5
+   0 :: not less than 5
+ 0 :: not greater than 3
+
+13. Write a generator which accepts the value of a planet as a `@p` and returns the next neighbor, also as a `@p`.
+The next neighbor of a planet is calculated by incrementing the numeric value of the planet's address by one. You will then need to convert it from `@ud` back to `@p`. (You don't need to filter for planet input or anything, just for `@p`.)
+For instance, the next neighbor of ~sampel-palnet is ~radbyr-fonlyr.
+
+:: PlanetPal.hoon
+:: Find the name of the planet that succeeds you
+
+|=  pal=@p
+^-  @p
+  (add 1 `@`pal)
+
+14. Write a generator which accepts the value of a planet as a `@p` and returns the next neighbor and the previous neighbor as a *cell* of two `@p`s.
+The previous neighbor of a planet is calculated by decrementing the numeric value of the planet's address by one. You will then need to convert it from `@ud` back to `@p`. (You don't need to filter for planet input or anything, just for `@p`.)
+For instance, the previous neighbor of ~sampel-palnet is ~datwyn-lavrud.
+
+:: PlanetGang.hoon
+:: Find the names of the planets that surround you.
+:: Enter your @p and you'll receieve the @p of the adresses that book end you.
+
+|=  pal=@p
+^-  [@p @p]
+  [(add 1 `@`pal) (sub `@`pal 1)]
+
+15. Write a generator which accepts the value of a planet as a `@p` and returns the parent star, also as a `@p`.
+The parent of a planet is calculated by taking the remainder after division by 65.536. You can obtain this value using the `++mod` gate or the `++dvr` gate. You will then need to convert it from `@ud` back to `@p`.
+(You dont need to filter for planet input or anything, just for `@p`.) For instance, the parent of ~sampel-palnet is ~talpur.
+
+:: PlanetStar.hoon
+:: Let's find out which star gave you life.
+:: Enter your planet and calculate the Star you were originally spanwed from.
+
+|=  pal=@p
+^-  @p
+  `@p`(mod `@`pal `@`65.536)
+
+  =/  pal  ~bonnys-tipdyn
+  ^-  @p
+    `@p`(mod `@`pal `@`65.536)
+
+16. Write a generator that takes a sample of 3 arguments—two @uds and a @tas (which will be one of %mul %sub %add %div),
+with branches to handle multiplication, division, addition and subtraction. Use a gate.
+Write ?: wutcol runes to branch for each @tas case and the .= dottis equality-checking rune to check for actual value of the input v. option.
+Use the standard library functions to do the actual work in those expressions.
+Confirm that you can input your three arguments and receive the desired result of the selected operation.
+E.g. assuming your generator is named calculator.hoon, `+calculator [4 5 %mul]` should yield 20.
+
+:: HoonCalc.hoon
+:: A rudementry caluculator.
+:: I was not able to complete this question.
+:: I attempted to strip back my generator file to a point of least confusion below.
+:: I am aware this does not work.
+
+|=  [calc=$:(numOne=@ud numTwo=@ud operation=@tas)
+^-  @ud
+=(operation %mul)
+  (mul numOne numTwo)
+  =(operation %sub)
+    (sub numTwo numOne)
+    =(operation %add)
+      (add numOne numTwo)
+      =(operation %div)
+        (div numOne numTwo)
+
+
+
+17. What are your biggest remaining concerns, points of misunderstanding or fuzzy understanding, or other feedback on Lesson 2
