@@ -1,0 +1,43 @@
+
+:::::::::::::::::::::::::::::::::::::::::
+:: ****** Hoon Homework Lesson 3 ********
+:::::::::::::::::::::::::::::::::::::::::
+
+Q1. :: You work in a lab.
+    :: The lab uses a scale which is inaccurate for values less than 10 grams.
+    :: Any weight less than that should simply register as zero in your measurements.
+    :: Write a gate in an arm `++corrected-weight` which checks whether the value is less than 10 and returns zero if it is, otherwise returns the normal value.
+    :: (Just answer with the arm; don't worry about the core for this question.)
+
+
+Q2. :: The lab needs to know the total quantity of reagent (in grams) you've been able to produce in the past week.
+    :: Each day's total may be calculated by taking the day number times itself.
+    :: (E.g. on day three 3×3=9 grams were produced. The reaction is reset every Monday.)
+    :: Write a trap to add up the seven values.
+
+
+Q3. :: FizzBuzz is a classic computer science challenge question.
+    :: For this step, write a gate in an arm `++fizz` which accepts a count and counts upward,
+    :: outputting (using ~& sigpam) the number each time and `"fizz"` every third number until the count is reached.
+    :: (I.e., given 7, it should count from 1 to 7 and output "fizz" at 3 and 6.)
+
+
+Q4. :: For this step, write a gate in an arm `++buzz` which accepts a count and counts upward,
+    :: outputting (using ~& sigpam) the number each time and `"buzz"` every fifth number until the count is reached.
+    :: (I.e., given 7, it should count from 1 to 7 and output "buzz" at 5.)
+
+
+Q5. :: For this step, write a gate in an arm `++fizzbuzz` which accepts a count and counts upward,
+    :: outputting (using ~& sigpam) the number each time, `"fizz"` every third number, and `"buzz"` every fifth number until the count is reached.
+    :: (I.e., given 15, it should count from 1 to 15 with the output: 1 2 3 fizz 4 5 buzz 6 fizz 7 8 9 fizz 10 buzz 11 12 fizz 13 14 15 fizz buzz, but with line breaks between them.)
+    :: Make sure that it outputs *both* "fizz" and "buzz" for numbers that are divisible by both three and five.
+
+
+Q6. :: Produce a type arm named `reptile` using +$ lusbuc which is a type union ($? bucwut) for several reptiles of your choice.
+    :: (E.g. if I were doing this for amphibians, I could use %frog, %toad, and %salamander.)
+    :: Provide at least four options in the type union. (The `%word` syntax is a "term", or internal constant value we can use to label things in Hoon: previewing this a bit!)
+
+
+Q7. :: Recall the calculator problem from %hw2.
+    :: Convert it to use a |% barcen core for the operations (e.g. `++add-num`) with either a `=<` tisgal or `=>` tisgar.
+    :: Produce a generator which accepts two numbers and an operation, such as `+calc [5 4 %mul]` and yields `20`.
