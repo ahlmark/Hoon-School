@@ -6,14 +6,26 @@
 Q1. :: You work in a lab.
     :: The lab uses a scale which is inaccurate for values less than 10 grams.
     :: Any weight less than that should simply register as zero in your measurements.
-    :: Write a gate in an arm `++corrected-weight` which checks whether the value is less than 10 and returns zero if it is, otherwise returns the normal value.
+    :: Write a gate in an arm `++corrected-weight`
+    :: which checks whether the value is less than 10 and returns zero if it is, otherwise returns the normal value.
     :: (Just answer with the arm; don't worry about the core for this question.)
+
+:: corrected-weight.hoon
+:: All inputs below 10 are output as 0.
+
+|=  corrected-weight=@ud
+^-  @ud
+?:  %-(lth [corrected-weight 10])
+  0
+corrected-weight
+
 
 
 Q2. :: The lab needs to know the total quantity of reagent (in grams) you've been able to produce in the past week.
     :: Each day's total may be calculated by taking the day number times itself.
     :: (E.g. on day three 3×3=9 grams were produced. The reaction is reset every Monday.)
     :: Write a trap to add up the seven values.
+
 
 
 Q3. :: FizzBuzz is a classic computer science challenge question.
